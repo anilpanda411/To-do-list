@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do List</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ── Header ── -->
+  <div class="header">
+    <div class="header-tag">Productivity</div>
+    <h1>My <span>Tasks.</span></h1>
+    <p class="subtitle">Stay organized, one task at a time.</p>
+  </div>
+
+  <!-- ── Stats Bar ── -->
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-num" id="total-count">0</span>
+      <span class="stat-label">Total</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num accent" id="done-count">0</span>
+      <span class="stat-label">Done</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num red" id="pending-count">0</span>
+      <span class="stat-label">Pending</span>
+    </div>
+  </div>
+
+  <!-- ── Progress Bar ── -->
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span>Progress</span>
+      <span id="progress-pct">0%</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+  </div>
+
+  <!-- ── Task Input ── -->
+  <div class="input-section">
+    <div class="input-row">
+      <input
+        type="text"
+        class="task-input"
+        id="taskInput"
+        placeholder="Add a new task…"
+        autocomplete="off"
+        maxlength="200"
+      />
+      <button class="add-btn" id="addTaskBtn">+ Add Task</button>
+    </div>
+    <!-- Error shown when user tries to add an empty task -->
+    <div class="error-msg" id="errorMsg">
+      <span>⚠</span> Please enter a task before adding.
+    </div>
+  </div>
+
+  <!-- ── Filter Tabs ── -->
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="pending">Pending</button>
+    <button class="filter-btn" data-filter="done">Completed</button>
+  </div>
+
+  <!-- ── Task List ── -->
+  <div class="task-list" id="taskList"></div>
+
+  <!-- ── Empty State (shown when list is empty) ── -->
+  <div class="empty-state" id="emptyState">
+    <span class="empty-icon">✓</span>
+    <p class="empty-title" id="emptyTitle">No tasks yet</p>
+    <p class="empty-sub" id="emptySub">Type something above to get started.</p>
+  </div>
+
+  <!-- ── Actions Row ── -->
+  <div class="actions-row">
+    <button class="clear-btn" id="clearDoneBtn">Clear completed</button>
+  </div>
+
+</div>
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>
